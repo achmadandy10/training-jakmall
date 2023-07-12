@@ -1,0 +1,58 @@
+{
+  "name": "project-name",
+  "author": {
+    "name": "Achmad Andy Dekanovy",
+    "email": "mrtevos17@gmail.com"
+  },
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "YOUR_GIT_REPO_URL",
+  "engines": {
+    "node": ">=16.0 .0",
+    "yarn": ">=1.22.19",
+    "npm": "please-use-yarn"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "prettier": "prettier --write .",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint src --ext ts,tsx,js --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write .",
+    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "eslint": "^8.44.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "eslint-config-import": "^0.13.0",
+    "eslint-config-next": "^13.4.9",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
+  },
+  "resolutions": {
+    "webpack": "^5"
+  }
+}

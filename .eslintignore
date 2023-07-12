@@ -1,0 +1,14 @@
+dist
+.vscode
+.swc
+coverage
+__tests__
+commitlint.config.cjs
+jest.config.js
+jest.setup.js
+node_modules
+yarn.lock
+package-lock.json
+.eslintrc.cjs
+public
+vite.config.ts

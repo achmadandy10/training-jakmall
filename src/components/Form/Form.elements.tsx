@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const FormContainer = styled.div``;
+export const FormContainer = styled.div`
+  padding-right: 30px;
+`;
 
 export const FormTitle = styled.h1`
   color: var(--orange-color);

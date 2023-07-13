@@ -1,17 +1,13 @@
 import { FC, Fragment } from 'react';
+import { StepInterface } from '../../interfaces';
 import {
   BreadcrumbsChevron,
   BreadcrumbsContainer,
   BreadcrumbsStep,
 } from './Breadcrumbs.elements';
 
-interface StepEntity {
-  label: string;
-  isActive: boolean;
-}
-
 interface BreadcrumbsProps {
-  step: StepEntity[];
+  step: StepInterface[];
 }
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({ step }): JSX.Element => {

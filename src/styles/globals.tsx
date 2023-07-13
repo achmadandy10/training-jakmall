@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     --body-font: 'Montserrat', sans-serif;
     --big-font-size: 36px;
     --h1-font-size: 24px;
+    --h2-font-size: 18px;
     --normal-font-size: 16px;
     --small-font-size: 14px;
     --smaller-font-size: 12px;

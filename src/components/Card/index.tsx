@@ -1,8 +1,16 @@
 import { ComponentProps, FC } from 'react';
-import { CardContainer } from './Card.elements';
+import { CardButton, CardContainer } from './Card.elements';
 
-type CardProps = ComponentProps<typeof CardContainer>;
+type CardComponentProps = ComponentProps<typeof CardContainer>;
 
-export const Card: FC<CardProps> = ({ children }): JSX.Element => {
+export const CardComponent: FC<CardComponentProps> = ({
+  children,
+}): JSX.Element => {
   return <CardContainer>{children}</CardContainer>;
 };
+
+CardComponent.displayName = 'Card';
+
+export const Card = Object.assign(CardComponent, {
+  Button: CardButton,
+});

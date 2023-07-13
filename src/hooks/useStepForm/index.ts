@@ -1,14 +1,7 @@
-import { FC, useEffect, useState } from 'react';
-import {
-  Breadcrumbs,
-  Card,
-  Form as FormComponent,
-  Summary,
-} from '../components';
-
+import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-export const Home: FC = (): JSX.Element => {
+export const useStepForm = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
@@ -36,7 +29,6 @@ export const Home: FC = (): JSX.Element => {
     setStep(newStep);
     navigate(`?step=${stepForm - 1}`);
     setStepForm(stepForm - 1);
-    window.location.reload();
   };
 
   const handleNextStep = () => {
@@ -67,24 +59,5 @@ export const Home: FC = (): JSX.Element => {
     }
   }, [searchParams, step]);
 
-  return (
-    <Card>
-      <Breadcrumbs step={step} />
-
-      <FormComponent>
-        <button onClick={handleBackStep}>Back Step</button>
-
-        {stepForm === 1 && <form action="">Delivery Details</form>}
-
-        {stepForm === 2 && <form action="">Shipment</form>}
-
-        {stepForm === 3 && <div>Thank You</div>}
-
-        <button onClick={handleNextStep}>Next Step</button>
-      </FormComponent>
-      <Summary>
-        <Summary.Title>Summary</Summary.Title>
-      </Summary>
-    </Card>
-  );
+  return { step, stepForm, handleBackStep, handleNextStep };
 };

@@ -1,8 +1,14 @@
 import { ComponentProps, FC } from 'react';
-import { FormContainer } from './Form.elements';
+import { FormContainer, FormTitle } from './Form.elements';
 
-type FormProps = ComponentProps<typeof FormContainer>;
+type FormComponentProps = ComponentProps<typeof FormContainer>;
 
-export const Form: FC<FormProps> = ({ children }): JSX.Element => {
+const FormComponent: FC<FormComponentProps> = ({ children }): JSX.Element => {
   return <FormContainer>{children}</FormContainer>;
 };
+
+FormComponent.displayName = 'Form';
+
+export const Form = Object.assign(FormComponent, {
+  Title: FormTitle,
+});

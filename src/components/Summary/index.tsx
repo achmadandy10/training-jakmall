@@ -1,5 +1,9 @@
 import { ComponentProps, FC } from 'react';
-import { SummaryContainer, SummaryTitle } from './Summary.elements';
+import {
+  SummaryButton,
+  SummaryContainer,
+  SummaryTitle,
+} from './Summary.elements';
 
 type SummaryComponentProps = ComponentProps<typeof SummaryContainer>;
 
@@ -13,4 +17,5 @@ SummaryComponent.displayName = 'Summary';
 
 export const Summary = Object.assign(SummaryComponent, {
   Title: SummaryTitle,
+  Button: SummaryButton,
 });

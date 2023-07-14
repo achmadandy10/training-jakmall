@@ -26,6 +26,7 @@ export const CardButton = styled.button`
   position: absolute;
   top: 30px;
   left: 40px;
+  cursor: pointer;
 
   & svg {
     width: 18px;

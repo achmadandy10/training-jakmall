@@ -16,6 +16,35 @@ export const SummaryTitle = styled.h1`
   line-height: normal;
 `;
 
+export const SummaryItems = styled.ul``;
+
+export const SummaryItem = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 13px;
+  }
+`;
+
+export const SummaryDetail = styled.span`
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
+export const SummarySubDetail = styled.span`
+  color: #000;
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+
 export const SummaryButton = styled.button`
   display: flex;
   width: 100%;

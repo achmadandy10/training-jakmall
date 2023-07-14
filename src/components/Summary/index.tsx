@@ -2,6 +2,10 @@ import { ComponentProps, FC } from 'react';
 import {
   SummaryButton,
   SummaryContainer,
+  SummaryDetail,
+  SummaryItem,
+  SummaryItems,
+  SummarySubDetail,
   SummaryTitle,
 } from './Summary.elements';
 
@@ -18,4 +22,8 @@ SummaryComponent.displayName = 'Summary';
 export const Summary = Object.assign(SummaryComponent, {
   Title: SummaryTitle,
   Button: SummaryButton,
+  Items: SummaryItems,
+  Item: SummaryItem,
+  Detail: SummaryDetail,
+  SubDetail: SummarySubDetail,
 });

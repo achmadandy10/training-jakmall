@@ -9,16 +9,8 @@ import { SectionStepFormTwo } from './sectionStepFormTwo';
 
 export const Home: FC = (): JSX.Element => {
   const { step, stepForm, handleBackStep, handleNextStep } = useStepForm();
-  const {
-    data,
-    setData,
-    shipment,
-    setShipment,
-    payment,
-    setPayment,
-    cart,
-    dropshipFee,
-  } = useData();
+  const { data, setData, shipment, payment, cart, dropshipFee } = useData();
+
   return (
     <StepFormContext.Provider
       value={{ step, stepForm, handleBackStep, handleNextStep }}
@@ -28,9 +20,7 @@ export const Home: FC = (): JSX.Element => {
           data,
           setData,
           shipment,
-          setShipment,
           payment,
-          setPayment,
           cart,
           dropshipFee,
         }}

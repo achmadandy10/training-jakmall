@@ -10,7 +10,7 @@ import {
 
 type RadioButtonComponentProps = ComponentProps<typeof Radio> & {
   title?: string;
-  subtitle?: string;
+  subtitle?: string | number | undefined;
 };
 
 const RadioButtonComponent: FC<RadioButtonComponentProps> = ({

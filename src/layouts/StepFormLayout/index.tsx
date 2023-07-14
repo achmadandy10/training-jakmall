@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
 import { MdArrowBack } from 'react-icons/md';
 import { Breadcrumbs, Card, Summary } from '../../components';
-import { useDataContext } from '../../utils/context/DataContext';
-import { useStepFormContext } from '../../utils/context/StepFormContext';
+import { NumberFormat, useDataContext, useStepFormContext } from '../../utils';
 import { StepFormLayoutContainer } from './StepFormLayout.elements';
 
 export const StepFormLayout = ({
@@ -56,13 +55,15 @@ export const StepFormLayout = ({
               <Summary.Item>
                 <Summary.Detail>Cost of goods</Summary.Detail>
                 <Summary.SubDetail>
-                  {cart.reduce((n, { price }) => n + price, 0)}
+                  {NumberFormat(cart.reduce((n, { price }) => n + price, 0))}
                 </Summary.SubDetail>
               </Summary.Item>
               {data.isDropship && (
                 <Summary.Item>
                   <Summary.Detail>Dropshipping Fee</Summary.Detail>
-                  <Summary.SubDetail>{dropshipFee?.fee}</Summary.SubDetail>
+                  <Summary.SubDetail>
+                    {dropshipFee?.fee ? NumberFormat(dropshipFee?.fee) : ''}
+                  </Summary.SubDetail>
                 </Summary.Item>
               )}
             </Summary.Items>

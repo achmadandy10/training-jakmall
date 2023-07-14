@@ -10,10 +10,8 @@ import {
 export type DataContextProps = {
   data: DataInterface;
   setData: Dispatch<SetStateAction<DataInterface>>;
-  shipment: ShipmentInterface | undefined;
-  setShipment: Dispatch<SetStateAction<ShipmentInterface | undefined>>;
-  payment: PaymentInterface | undefined;
-  setPayment: Dispatch<SetStateAction<PaymentInterface | undefined>>;
+  shipment: ShipmentInterface[];
+  payment: PaymentInterface[];
   cart: CartInterface[];
   dropshipFee: DropshipperInterface | undefined;
 };

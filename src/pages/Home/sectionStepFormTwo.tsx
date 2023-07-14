@@ -1,7 +1,11 @@
 import { FC } from 'react';
 import { Form, RadioButton } from '../../components';
+import { useData } from '../../hooks';
+import { NumberFormat } from '../../utils';
 
 export const SectionStepFormTwo: FC = (): JSX.Element => {
+  const { shipment, payment } = useData();
+
   return (
     <Form>
       <div>
@@ -17,17 +21,16 @@ export const SectionStepFormTwo: FC = (): JSX.Element => {
             marginBottom: '60px',
           }}
         >
-          <RadioButton
-            name={'shipment'}
-            title={'GO-SEND'}
-            subtitle={'15,000'}
-          />
-          <RadioButton name={'shipment'} title={'JNE'} subtitle={'9,000'} />
-          <RadioButton
-            name={'shipment'}
-            title={'Personal Courier'}
-            subtitle={'29,000'}
-          />
+          {shipment.map(({ id, name, price }) => {
+            return (
+              <RadioButton
+                key={id}
+                name={'shipment'}
+                title={name}
+                subtitle={`${NumberFormat(price)}`}
+              />
+            );
+          })}
         </div>
       </div>
       <div>
@@ -42,13 +45,16 @@ export const SectionStepFormTwo: FC = (): JSX.Element => {
             marginTop: '30px',
           }}
         >
-          <RadioButton
-            name={'payment'}
-            title={'e-Wallet'}
-            subtitle={'1,500,000 left'}
-          />
-          <RadioButton name={'payment'} subtitle={'Bank Transfer'} />
-          <RadioButton name={'payment'} subtitle={'Virtual Account'} />
+          {payment.map(({ id, name, saldo }) => {
+            return (
+              <RadioButton
+                key={id}
+                name={'payment'}
+                title={name}
+                subtitle={`${saldo ? NumberFormat(saldo) + ' left' : ''}`}
+              />
+            );
+          })}
         </div>
       </div>
     </Form>

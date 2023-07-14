@@ -4,19 +4,26 @@ import {
   FormInputLabel,
   Input,
 } from './FormInput.elements';
+import { FormInputTextarea } from './FormInputTextarea';
 
-type FormInputProps = ComponentProps<typeof Input> & {
+type FormInputComponentProps = ComponentProps<typeof Input> & {
   label: string;
 };
 
-export const FormInput: FC<FormInputProps> = ({
+export const FormInputComponent: FC<FormInputComponentProps> = ({
   label,
   ...props
 }): JSX.Element => {
   return (
     <FormInputContainer>
-      <Input {...props} />
+      <Input placeholder=" " {...props} />
       <FormInputLabel>{label}</FormInputLabel>
     </FormInputContainer>
   );
 };
+
+FormInputComponent.displayName = 'FormInput';
+
+export const FormInput = Object.assign(FormInputComponent, {
+  Textarea: FormInputTextarea,
+});

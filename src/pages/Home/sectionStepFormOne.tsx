@@ -1,16 +1,27 @@
 import { FC } from 'react';
-import { Form, FormInput } from '../../components';
+import { Checkbox, Form, FormInput } from '../../components';
 
 export const SectionStepFormOne: FC = (): JSX.Element => {
   return (
     <Form>
-      <Form.Title>Delivery details</Form.Title>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Form.Title>Delivery details</Form.Title>
+
+        <Checkbox label={'Send as dropshipper'} />
+      </div>
 
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '20px',
+          rowGap: '10px',
+          columnGap: '30px',
           marginTop: '36px',
         }}
       >
@@ -18,6 +29,7 @@ export const SectionStepFormOne: FC = (): JSX.Element => {
         <FormInput label={'Dropshipper name'} />
         <FormInput label={'Phone Number'} />
         <FormInput label={'Dropshipper phone number'} />
+        <FormInput.Textarea label={'Delivery Address'} />
       </div>
     </Form>
   );

@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-export const FormInputContainer = styled.div`
+export const FormInputTextareaContainer = styled.div`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: 120px;
 `;
 
-export const Input = styled.input`
+export const Textarea = styled.textarea`
   width: 100%;
-  height: 60px;
+  height: 120px;
   padding: 25px 15px 10px 15px;
   outline-color: transparent;
   border: 2px solid #cccccc;
@@ -37,9 +37,10 @@ export const Input = styled.input`
   }
 `;
 
-export const FormInputLabel = styled.label`
+export const FormInputTeaxtareaLabel = styled.label`
   position: absolute;
   left: 0;
+  top: 0;
   padding: 20px 15px;
   pointer-events: none;
   transition: 0.6s;
